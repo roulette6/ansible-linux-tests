@@ -10,8 +10,6 @@
   hosts: rockies
   become: true
 
-  vars:
-
   tasks:
     - name: "Create Velo groups - Not required for real Velo"
       ansible.builtin.group:
