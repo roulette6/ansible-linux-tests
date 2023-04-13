@@ -11,31 +11,6 @@
   become: true
 
   vars:
-    ansible_user: josue
-    ansible_password: kanyewestisnotthebest
-    velo_groups:
-      - vcadmin
-      - adm
-      - cdrom
-      - netdev
-      - sudo
-    velo_users:
-      - name: jason
-        password: "$6$2Jrmh8Ip6VKWY8Un$Z21UpJOLwZp1pAIeFYIG86TAiJKhLUXbc0ZSL8uLqMNyAqq56JlspD9T1ze2zyWO1W2lZAeI4P9a2N36Kyy6n/"
-        comment: Jason S
-      - name: robert
-        password: "$6$crRFuKomSMt4j8Ee$IiH3EEZL9lP1Cffym3unJ3JGsfUrwQQUunb7qNcQeTLeL90hm2.2ed6GPZ25J1fO0hCl.GLwWFSdT8CQwRv1o1"
-        comment: Robert K
-      - name: michael
-        password: "$6$oFHMeOKipj4Bsap3$QXuX.Il6B5Yp3LGg5Vu2NEQx2LKJ9RHJZWrYj/V8SdP1/WaJqxhDGv.6ns.q28naVwYuJTRutuBCPgHvntJEq0"
-        comment: Michael W
-      - name: ryan
-        password: "$6$tbsCsaKVsiGhGKiL$k26jjeO0HzEsk1O9f87nE9q52iS1c4BL2I7QNPfb6cyTWlMgn8Tc42iFrtkuQWQk6jWgpSPXaOc6AtG50uEQu/"
-        comment: Ryan K
-      - name: netbrain
-        password: "$6$9BKJaGeMNIBGujLM$5TVMu..KIinyg.C0AIdsx2M7qdbUXeAZsqp5l9AbLC4e60hH8qO0Qc3tWZ5OtiQVaSRgSVjXL3cHsEc3SJgjK/"
-        comment: NetBrain
-    user_groups: vcadmin,adm,cdrom,sudo,netdev
 
   tasks:
     - name: "Create Velo groups - Not required for real Velo"
