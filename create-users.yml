@@ -1,0 +1,44 @@
+---
+# Create users and add them to specific groups
+
+- name: Create groups and users
+  hosts: rockies
+  become: true
+
+  vars:
+    ansible_user: josue
+    ansible_password: kanyewestisnotthebest
+    velo_groups:
+      - vcadmin
+      - adm
+      - cdrom
+      - netdev
+      - sudo
+    velo_users:
+      - name: jason
+        comment: Jason S
+      - name: robert
+        comment: Robert K
+      - name: michael
+        comment: Michael W
+      - name: ryan
+        comment: Ryan K
+      - name: netbrain
+        comment: NetBrain
+    user_groups: vcadmin,adm,cdrom,sudo,netdev
+
+  tasks:
+    - name: Create Velo groups
+      ansible.builtin.group:
+        name: "{{ item }}"
+        state: present
+      loop: "{{ velo_groups }}"
+
+    - name: Create Netdiddly users
+      ansible.builtin.user:
+        name: "{{ item.name }}"
+        comment: "{{ item.comment }}"
+        groups: "{{ user_groups }}"
+        append: true
+        state: present
+      loop: "{{ velo_users }}"

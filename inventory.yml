@@ -1,0 +1,11 @@
+---
+all:
+  children:
+    rockies:
+      hosts:
+        rocky1:
+          ansible_host: rocky1.vm.jm
+        rocky2:
+          ansible_host: rocky2.vm.jm
+        rocky3:
+          ansible_host: rocky3.vm.jm
