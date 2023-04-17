@@ -5,6 +5,7 @@
 # ansible all -i localhost, -m debug -a "msg={{ 'mikeHz3bGfs9XTWdBnMp' | password_hash('sha512', '') }}"
 # ansible all -i localhost, -m debug -a "msg={{ 'ryanrMLLEs7rb29hiVgN' | password_hash('sha512', '') }}"
 # ansible all -i localhost, -m debug -a "msg={{ 'brainPX8vjVhb98a3pEb' | password_hash('sha512', '') }}"
+# ansible all -i localhost, -m debug -a "msg={{ 'towerq3mp63coViXKsXt' | password_hash('sha512', '') }}"
 
 - name: Create groups and users
   hosts: rockies
@@ -24,7 +25,7 @@
         groups: "{{ user_groups }}"
         name: "{{ item.name }}"
         password: "{{ item.password }}"
-        password_expire_max: 90
+        password_expire_max: "{{ 90 if item.name not in ['netbrain', 'tower'] else 365 }}"
         password_expire_min: 7
         state: present
         update_password: on_create
@@ -33,6 +34,7 @@
     - name: Expire user passwords
       shell: "chage --lastday 0 {{ item.name }}"
       loop: "{{ velo_users }}"
+      when: item.name not in ['netbrain', 'tower']
 
     - name: Create .ssh directory for jason user
       ansible.builtin.file:

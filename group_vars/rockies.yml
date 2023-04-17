@@ -25,4 +25,7 @@ velo_users:
   - name: netbrain
     password: "$6$9BKJaGeMNIBGujLM$5TVMu..KIinyg.C0AIdsx2M7qdbUXeAZsqp5l9AbLC4e60hH8qO0Qc3tWZ5OtiQVaSRgSVjXL3cHsEc3SJgjK/"
     comment: NetBrain
+  - name: tower
+    password: "$6$yABvWI68ltqrdjOE$UifYWrjzV6gUHymJ/p3KS47KssLUVLLvQNlZ2wuhBkkBUpOg94Ijat7rEwqo/4zPRLTfguu/dQY3ym2jcs3ov."
+    comment: Ansible Tower
 user_groups: vcadmin,adm,cdrom,sudo,netdev
