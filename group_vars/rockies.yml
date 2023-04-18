@@ -1,6 +1,7 @@
 ---
 ansible_user: josue
 ansible_password: kanyewestisnotthebest
+ansible_sudo_pass: "{{ ansible_password }}"
 
 velo_groups:
   - vcadmin
