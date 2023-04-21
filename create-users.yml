@@ -32,7 +32,7 @@
       loop: "{{ velo_users }}"
 
     - name: Expire user passwords
-      shell: "chage --lastday 0 {{ item.name }}"
+      ansible.builtin.command: "chage --lastday 0 {{ item.name }}"
       loop: "{{ velo_users }}"
       when: item.name not in ['netbrain', 'tower']
 
